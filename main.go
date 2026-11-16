@@ -14,9 +14,12 @@ const (
 	ANSI_BOLD_GREEN = "\x1b[1;32m"
 )
 
+var HELP_TEXT = `usage: my-attendance-calculator file_path`
+
 func main() {
 	if len(os.Args) < 2 {
-		ErrExit(fmt.Sprintf("err: %s\n", "insufficient amount of arguments"))
+		fmt.Println(HELP_TEXT)
+		return
 	}
 
 	filePath := os.Args[1]
